@@ -275,8 +275,8 @@ window.__SITE_CONFIG__ = {
     {
       title: "1일 구직청원휴가 상담",
       subtitle: "",
-      price: "40,000",
-      unit: "원",
+      price: "",
+      unit: "",
       popular: false,
       features: [
         "상담예정확인서, 진행과정 템플릿 발급",
@@ -292,8 +292,8 @@ window.__SITE_CONFIG__ = {
     {
       title: "2일 구직청원휴가 상담",
       subtitle: "",
-      price: "60,000",
-      unit: "원",
+      price: "",
+      unit: "",
       popular: true,
       features: [
         "상담예정확인서, 진행과정 템플릿 발급",
