@@ -933,8 +933,17 @@ section {
 .pricing-title {
   font-size: 14px;
   font-weight: 700;
-  margin-bottom: 0;
+  margin-bottom: 0.75rem;
   line-height: 1.3;
+}
+
+.pricing-header-cta {
+  margin: 0.75rem 0 1rem 0;
+}
+
+.pricing-header-cta .btn {
+  padding: 0.6rem 1.5rem;
+  font-size: 14px;
 }
 
 .pricing-subtitle {
@@ -987,6 +996,23 @@ section {
   font-weight: bold;
   flex-shrink: 0;
   margin-right: 0.1rem;
+}
+
+/* 카테고리 헤더 스타일 */
+.pricing-feature.category-header {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text);
+  background: var(--brand-light);
+  padding: 0.6rem 0.8rem;
+  margin: 0.8rem 0 0.4rem 0;
+  border-radius: var(--radius);
+  border-left: 4px solid var(--brand);
+}
+
+.pricing-feature.category-header::before {
+  content: "";
+  display: none;
 }
 
 /* 제한사항 */

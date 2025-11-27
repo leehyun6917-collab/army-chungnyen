@@ -432,7 +432,10 @@
         <div class="pricing-card ${item.popular ? 'popular' : ''}">
           ${item.popular ? '<div class="pricing-badge">인기</div>' : ''}
           <div class="pricing-header">
-            <h3 class="pricing-title">${item.title}</h3>
+            <h3 class="pricing-title">${item.title.replace(' (', '<br>(')}</h3>
+            <div class="pricing-header-cta">
+              <a href="#" class="btn btn-primary btn-sm js-kakao-cta">${item.cta}</a>
+            </div>
             <p class="pricing-subtitle">${item.subtitle}</p>
             <div class="pricing-price">
               <span class="price-amount">${item.price.toLocaleString()}</span>
@@ -441,9 +444,11 @@
           </div>
           <div class="pricing-content">
             <ul class="pricing-features">
-              ${item.features.map(feature =>
-                `<li class="pricing-feature">${feature}</li>`
-              ).join('')}
+              ${item.features.map(feature => {
+                // 카테고리 항목 확인 (추천 대상, 진행 내용, 제공 문서, 지원)
+                const isCategory = ['추천 대상', '진행 내용', '제공 문서', '지원'].includes(feature);
+                return `<li class="pricing-feature ${isCategory ? 'category-header' : ''}">${feature}</li>`;
+              }).join('')}
             </ul>
             ${item.limitations && item.limitations.length > 0 ? `
               <ul class="pricing-limitations">
