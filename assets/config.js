@@ -12,14 +12,14 @@ window.__SITE_CONFIG__ = {
     enabled: true,
     badge: "사칭 주의",
     title: "사칭 업체 피해에 주의하세요",
-    desc: "최근 청년취업진흥교육원을 사칭하는 업체로 인한 <strong>피해 사례가 늘고 있습니다.</strong><br>상담 전 카카오톡 채널의 <strong>친구 수 2만 명 이상</strong>인지 꼭 확인해 주세요.",
+    desc: "최근 청년취업진흥교육원을 사칭하는 업체들로 인한 <strong>피해 사례가 늘고 있습니다.</strong> 인스타나 네이버에 홍보되는 검증되지 않은 업체들을 조심하시길 바랍니다.<br>",
     checklist: [
       "채널명: 청년취업진흥교육원 (구직휴가)",
       "공식 인증 마크(파란 체크)와 친구수 <u class=\"scam-notice-underline\">20,000명 이상</u> 확인",
       "친구 수가 적거나 인증 마크가 없다면 사칭일 수 있습니다"
     ],
     imageLabel: "공식 카카오톡 채널",
-    image: "assets/images/IMG_5030.jpg",
+    image: "assets/images/IMG_5030.jpg?v=2",
     imageAlt: "청년취업진흥교육원 공식 카카오톡 채널 (친구 20,199명)",
     cta: "공식 채널에서 상담하기",
     hideToday: "오늘 하루 보지 않기",

@@ -87,7 +87,7 @@
           <h2 class="scam-notice-title" id="scam-notice-title">${notice.title}</h2>
           <p class="scam-notice-desc">${notice.desc}</p>
           <ul class="scam-notice-list">${checklist}</ul>
-          <p class="scam-notice-image-label">${notice.imageLabel}</p>
+          ${notice.imageLabel ? `<p class="scam-notice-image-label">${notice.imageLabel}</p>` : ''}
           <img class="scam-notice-image" src="${notice.image}" alt="${notice.imageAlt}">
           <a href="#" class="btn btn-primary btn-block js-kakao-cta">${notice.cta}</a>
         </div>
