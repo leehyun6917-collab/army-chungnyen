@@ -1,4 +1,4 @@
-// 청춘도약일자리교육원 - 메인 스크립트
+// 청년취업진흥교육원 - 메인 스크립트
 (function() {
   'use strict';
 
@@ -11,6 +11,9 @@
     }
 
     const config = window.__SITE_CONFIG__;
+
+    // 0. 사칭 주의 팝업 (카카오 CTA 링크 설정보다 먼저 렌더링)
+    renderScamNotice(config.scamNotice);
 
     // 1. 히어로 섹션 렌더링
     renderHeroSection();
@@ -57,8 +60,64 @@
     // 15. 스크롤 애니메이션
     setupScrollAnimations();
 
-    console.log('청춘도약일자리교육원 웹사이트 로드 완료');
+    console.log('청년취업진흥교육원 웹사이트 로드 완료');
   });
+
+  // 사칭 주의 팝업 렌더링
+  function renderScamNotice(notice) {
+    if (!notice || !notice.enabled) return;
+
+    const HIDE_KEY = 'scam_notice_hide_until';
+    try {
+      if (Date.now() < Number(localStorage.getItem(HIDE_KEY) || 0)) return;
+    } catch (e) { /* 저장소 접근 불가 시 항상 표시 */ }
+
+    const checklist = (notice.checklist || []).map(item => `<li>${item}</li>`).join('');
+    const modal = document.createElement('div');
+    modal.className = 'scam-notice';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-labelledby', 'scam-notice-title');
+    modal.innerHTML = `
+      <div class="scam-notice-overlay"></div>
+      <div class="scam-notice-box">
+        <button type="button" class="scam-notice-x" aria-label="${notice.close}">&times;</button>
+        <div class="scam-notice-body">
+          <span class="scam-notice-badge">⚠ ${notice.badge}</span>
+          <h2 class="scam-notice-title" id="scam-notice-title">${notice.title}</h2>
+          <p class="scam-notice-desc">${notice.desc}</p>
+          <ul class="scam-notice-list">${checklist}</ul>
+          <p class="scam-notice-image-label">${notice.imageLabel}</p>
+          <img class="scam-notice-image" src="${notice.image}" alt="${notice.imageAlt}">
+          <a href="#" class="btn btn-primary btn-block js-kakao-cta">${notice.cta}</a>
+        </div>
+        <div class="scam-notice-footer">
+          <button type="button" class="scam-notice-hide">${notice.hideToday}</button>
+          <button type="button" class="scam-notice-close">${notice.close}</button>
+        </div>
+      </div>`;
+
+    function close() {
+      modal.remove();
+      document.body.classList.remove('scam-notice-open');
+      document.removeEventListener('keydown', onKey);
+    }
+    function onKey(e) { if (e.key === 'Escape') close(); }
+
+    modal.querySelector('.scam-notice-overlay').addEventListener('click', close);
+    modal.querySelector('.scam-notice-x').addEventListener('click', close);
+    modal.querySelector('.scam-notice-close').addEventListener('click', close);
+    modal.querySelector('.scam-notice-hide').addEventListener('click', function() {
+      try {
+        localStorage.setItem(HIDE_KEY, String(Date.now() + 24 * 60 * 60 * 1000));
+      } catch (e) { /* 저장 실패 시 이번 방문만 닫기 */ }
+      close();
+    });
+    document.addEventListener('keydown', onKey);
+
+    document.body.appendChild(modal);
+    document.body.classList.add('scam-notice-open');
+  }
 
   // 히어로 섹션 렌더링
   function renderHeroSection() {

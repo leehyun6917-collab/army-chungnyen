@@ -3099,3 +3099,155 @@ section {
     display: none;
   }
 }
+/* 사칭 주의 팝업 */
+body.scam-notice-open {
+  overflow: hidden;
+}
+
+.scam-notice {
+  position: fixed;
+  inset: 0;
+  z-index: 10002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.scam-notice-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.scam-notice-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 440px;
+  max-height: calc(100vh - 32px);
+  max-height: calc(100dvh - 32px);
+  background: var(--bg);
+  border-top: 6px solid var(--danger);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.scam-notice-x {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  background: transparent;
+  font-size: 28px;
+  line-height: 1;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.scam-notice-body {
+  padding: 20px 20px 16px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scam-notice-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--danger);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.scam-notice-title {
+  margin: 10px 0 8px;
+  font-size: clamp(18px, 5vw, 22px);
+  line-height: 1.35;
+  color: var(--text);
+}
+
+.scam-notice-desc {
+  margin: 0 0 12px;
+  word-break: keep-all;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.scam-notice-desc strong {
+  color: var(--danger);
+}
+
+.scam-notice-list {
+  margin: 0 0 14px;
+  padding: 12px 14px 12px 30px;
+  background: #fff5f5;
+  border-radius: var(--radius);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.scam-notice-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.scam-notice-footer {
+  display: flex;
+  border-top: 1px solid var(--border);
+}
+
+.scam-notice-footer button {
+  flex: 1;
+  padding: 14px 8px;
+  border: 0;
+  background: var(--bg-light);
+  font-size: 14px;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.scam-notice-footer button + button {
+  border-left: 1px solid var(--border);
+  font-weight: 700;
+  color: var(--text);
+}
+
+.scam-notice-body .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+.scam-notice-underline {
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--danger);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.scam-notice-image-label {
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--brand-dark);
+}
+
+.scam-notice-image-label::before {
+  content: "✔ ";
+}

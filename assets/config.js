@@ -7,6 +7,25 @@ window.__SITE_CONFIG__ = {
   // 카카오톡 채널 설정
   kakaoChannelUrl: "http://pf.kakao.com/_YwsxcG/chat", // 카카오 채널 URL을 여기에 입력
 
+  // 사칭 업체 주의 팝업 (사이트 진입 시 표시)
+  scamNotice: {
+    enabled: true,
+    badge: "사칭 주의",
+    title: "사칭 업체 피해에 주의하세요",
+    desc: "최근 청년취업진흥교육원을 사칭하는 업체로 인한 <strong>피해 사례가 늘고 있습니다.</strong><br>상담 전 카카오톡 채널의 <strong>친구 수 2만 명 이상</strong>인지 꼭 확인해 주세요.",
+    checklist: [
+      "채널명: 청년취업진흥교육원 (구직휴가)",
+      "공식 인증 마크(파란 체크)와 친구수 <u class=\"scam-notice-underline\">20,000명 이상</u> 확인",
+      "친구 수가 적거나 인증 마크가 없다면 사칭일 수 있습니다"
+    ],
+    imageLabel: "공식 카카오톡 채널",
+    image: "assets/images/IMG_5030.jpg",
+    imageAlt: "청년취업진흥교육원 공식 카카오톡 채널 (친구 20,199명)",
+    cta: "공식 채널에서 상담하기",
+    hideToday: "오늘 하루 보지 않기",
+    close: "닫기"
+  },
+
   // [선택] 카카오 공식 위젯 사용시 (없으면 링크 방식으로 동작)
   kakaoAppKey: "", // 카카오 앱 키 (https://developers.kakao.com 에서 발급)
   kakaoChannelPublicId: "", // 카카오 채널 공개 ID
@@ -430,7 +449,7 @@ window.__SITE_CONFIG__ = {
   // 푸터
   footer: {
     description: "2030 청년들을 위한 일자리 정보 포털",
-    copyright: "© 2024 청춘도약일자리교육원. All rights reserved.",
+    copyright: "© 2024 청년취업진흥교육원. All rights reserved.",
     links: [
       { text: "이용약관", url: "#" },
       { text: "개인정보처리방침", url: "#" },

@@ -3,7 +3,7 @@
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Project Overview
-청춘도약일자리교육원 - 군복무 청년을 위한 구직청원휴가 상담 서비스 랜딩페이지
+청년취업진흥교육원 - 군복무 청년을 위한 구직청원휴가 상담 서비스 랜딩페이지
 
 ## Key Commands
 
@@ -104,6 +104,6 @@ git restore .
 
 ### Visual Assets
 - Hero background: `assets/images/b7f4fd81d147b0c0febb22f073b1365c.jpg`
-- Logo: `assets/images/청춘도약일자리교육원_logo.jpeg`
+- Logo: `assets/images/logo_jinheung.jpg`
 - Certifications: `certification_1.jpg`, `certification_3.jpg`, `certification_4.jpg`
 - Blog thumbnails: `thumb1.png` through `thumb6.png`
