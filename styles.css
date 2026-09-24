@@ -3189,7 +3189,7 @@ body.scam-notice-open {
   padding: 12px 14px 12px 30px;
   background: #fff5f5;
   border-radius: var(--radius);
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1.6;
   color: var(--text);
 }
