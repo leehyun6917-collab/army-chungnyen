@@ -83,7 +83,7 @@
       <div class="scam-notice-box">
         <button type="button" class="scam-notice-x" aria-label="${notice.close}">&times;</button>
         <div class="scam-notice-body">
-          <span class="scam-notice-badge">⚠ ${notice.badge}</span>
+          <span class="scam-notice-badge">${notice.badge}</span>
           <h2 class="scam-notice-title" id="scam-notice-title">${notice.title}</h2>
           <p class="scam-notice-desc">${notice.desc}</p>
           <ul class="scam-notice-list">${checklist}</ul>
