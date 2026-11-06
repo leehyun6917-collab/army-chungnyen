@@ -71,6 +71,10 @@
   <link rel="stylesheet" href="styles.css">
 
   <!-- 설정 파일 -->
+  <!-- 네이버 GFA 공통 스크립트 -->
+  <script src="//wcs.naver.net/wcslog.js"></script>
+  <script src="assets/naver-wcs.js"></script>
+
   <script src="assets/config.js"></script>
 
   <style>
@@ -1016,6 +1020,9 @@
   <!-- Conversion Tracking Script -->
   <script>
   function gtag_report_conversion(url) {
+    // 네이버 GFA 전환 (custom001)
+    if (typeof naverKakaoConversion === 'function') naverKakaoConversion();
+
     // sessionStorage에서 이미 클릭한 적이 있는지 확인
     const hasClicked = sessionStorage.getItem('kakao_consultation_clicked');
 
