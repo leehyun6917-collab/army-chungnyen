@@ -53,7 +53,20 @@
       "Read(//var/folders/xf/y_njbxkn391cwyzx1yh0dtd00000gn/T/TemporaryItems/NSIRD_screencaptureui_LOyTqE/**)",
       "Read(//Users/jeonghyeonwook/Downloads/**)",
       "Read(//var/folders/xf/y_njbxkn391cwyzx1yh0dtd00000gn/T/TemporaryItems/NSIRD_screencaptureui_KOFfVn/**)",
-      "Read(//Users/jeonghyeonwook/Desktop/부산_작업/Code/청년취업진흥교육원/**)"
+      "Read(//Users/jeonghyeonwook/Desktop/부산_작업/Code/청년취업진흥교육원/**)",
+      "Bash(awk *)",
+      "Bash(gh repo *)",
+      "Bash(gh api *)",
+      "Bash(curl -sI https://www.yedi.kr/)",
+      "Bash(curl -sI https://www.yedi.kr/reviews.html)",
+      "Bash(curl -s https://www.yedi.kr/reviews.html)",
+      "Read(//Users/hyeon-1/Downloads/**)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://www.yedi.kr/assets/images/logo_jinheung.jpg)",
+      "Bash(identify assets/images/IMG_5030.jpg)",
+      "Bash(sips -g pixelWidth -g pixelHeight assets/images/IMG_5030.jpg)",
+      "Bash(node --check main.js)",
+      "Bash(node --check assets/config.js)",
+      "Bash(git diff *)"
     ],
     "deny": [],
     "ask": []
