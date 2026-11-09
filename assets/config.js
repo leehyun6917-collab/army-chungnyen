@@ -34,9 +34,9 @@ window.__SITE_CONFIG__ = {
   contact: {
     phone: "0507-1353-8459",
     email: "mystaryoyo4@naver.com",
-    address: "부산광역시 해운대구 해운대로383번길",
+    address: "서울 구로구 20가길 5",
     businessNumber: "544-52-00853",
-    ceo: "이현",
+    ceo: "이현진",
   },
 
   // 히어로 섹션
