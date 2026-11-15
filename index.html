@@ -767,6 +767,13 @@ var protect_id = 'j957';
         'currency': 'KRW'
     });
 
+    // YEDI GA4(G-6J928SMMC0)에도 카카오 상담 클릭 전송 (주요 이벤트: kakao_click)
+    gtag('event', 'kakao_click', {
+        'send_to': 'G-6J928SMMC0',
+        'event_category': 'engagement',
+        'event_label': 'kakao_channel'
+    });
+
     // Google Ads 전환 추적 (약간의 지연 후)
     setTimeout(function() {
       // 기존 Google Ads 전환
