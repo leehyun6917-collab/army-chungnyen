@@ -731,9 +731,6 @@ var protect_id = 'j957';
   <!-- Conversion Tracking Script -->
   <script>
   function gtag_report_conversion(url) {
-    // 네이버 GFA 전환 (custom001)
-    if (typeof naverKakaoConversion === 'function') naverKakaoConversion();
-
     // sessionStorage에서 이미 클릭한 적이 있는지 확인
     const hasClicked = sessionStorage.getItem('kakao_consultation_clicked');
 
@@ -747,6 +744,9 @@ var protect_id = 'j957';
 
     // 처음 클릭한 경우: sessionStorage에 플래그 저장
     sessionStorage.setItem('kakao_consultation_clicked', 'true');
+
+    // 네이버 GFA 전환 (custom001) - 구글·GA4와 같이 세션당 첫 클릭 1회만 전송
+    if (typeof naverKakaoConversion === 'function') naverKakaoConversion();
 
     // 먼저 GA4 이벤트들을 전송
     // 기존 GA4에 카카오 상담 클릭 이벤트 전송
