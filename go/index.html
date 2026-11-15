@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>카카오톡 채널로 연결 중입니다</title>
+  <!-- 네이버 파워콘텐츠 등 외부 글에서 카카오 채널로 가는 링크의 클릭을 GA4에 기록한 뒤 바로 이동시키는 중간 페이지.
+       사용 예: https://www.yedi.kr/go/?utm_source=naver&utm_medium=powercontent&utm_campaign=글이름
+       (utm 값은 GA4가 자동으로 읽어 유입 경로로 기록합니다. 이 페이지는 검색에 노출되지 않습니다.) -->
+  <noscript><meta http-equiv="refresh" content="0;url=https://pf.kakao.com/_YwsxcG"></noscript>
+  <style>
+    body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;background:#fff;color:#333;text-align:center}
+    p{margin:0 0 14px;font-size:15px}
+    a{display:inline-block;padding:12px 22px;border-radius:8px;background:#fee500;color:#191919;text-decoration:none;font-weight:600;font-size:15px}
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6J928SMMC0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BQSBWCBJZD');
+    gtag('config', 'G-E6PRPMNQYH');
+    gtag('config', 'G-6J928SMMC0');
+  </script>
+</head>
+<body>
+  <div>
+    <p>카카오톡 채널로 연결 중입니다…</p>
+    <a id="go" href="https://pf.kakao.com/_YwsxcG">바로 가기</a>
+  </div>
+  <script>
+    (function () {
+      var DEST = 'https://pf.kakao.com/_YwsxcG';
+      var moved = false;
+      function go() { if (moved) return; moved = true; window.location.replace(DEST); }
+
+      // 기록이 늦거나 막혀도(광고 차단 등) 고객은 0.7초 안에 반드시 이동합니다
+      setTimeout(go, 700);
+
+      try {
+        gtag('event', 'kakao_consultation_click', { send_to: 'G-BQSBWCBJZD', event_category: 'engagement', event_label: 'kakao_channel' });
+        gtag('event', 'kakao_consultation_click', { send_to: 'G-E6PRPMNQYH', event_category: 'engagement', event_label: 'kakao_channel' });
+        // 주요 이벤트(kakao_click): 기록이 끝나면 바로 이동
+        gtag('event', 'kakao_click', { send_to: 'G-6J928SMMC0', event_category: 'engagement', event_label: 'kakao_channel', event_callback: go });
+      } catch (e) { go(); }
+    })();
+  </script>
+</body>
+</html>
